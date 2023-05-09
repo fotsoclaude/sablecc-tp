@@ -1,0 +1,19 @@
+/* define package-prefix */
+Package ensp.parity;
+
+Tokens
+    a = 'a';
+    b = 'b';
+    blank = (' ' | 13 | 10)+;
+
+ Ignored Tokens
+    blank;
+
+ Productions
+    pp
+       = {apair} a ip
+       | {bpair} b pp
+       | {empty} ;
+    ip
+        = {aimpair} a pp
+        | {bimpair} b ip;
