@@ -1,0 +1,18 @@
+
+
+/* define package-prefix */
+Package ensp.automate;
+
+Helpers
+    digit = ['0'..'9'];
+
+/* Define token */
+Tokens
+    aba = ('a'|'b')*'aba'('a'|'b')*;
+    parite = ('b'* | ('a''b'*'a'))*;
+    entier = digit+;
+    float = ('+'|'-')? digit (digit)* '.' digit (digit)* (('E' | 'e') ('+' | '-')? digit (digit)*)?;
+    blank = (' ' | 13 | 10)+;
+
+Ignored Tokens
+    blank;
